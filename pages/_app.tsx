@@ -1,6 +1,13 @@
 import React from 'react';
-import '../styles/global.css';
+import { Provider } from 'react-redux';
+import { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }): JSX.Element {
-  return <Component {...pageProps} />;
+import store from '../store';
+
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
