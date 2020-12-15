@@ -16,4 +16,8 @@ Primary.args = {
   avatarURL: 'https://via.placeholder.com/150',
   followers: 123,
   following: 456,
+  repos: Array.from(Array(10)).map((_, i) => ({
+    url: 'https://google.com',
+    name: `repo - ${i}`,
+  })),
 };

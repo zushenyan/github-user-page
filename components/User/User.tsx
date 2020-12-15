@@ -7,6 +7,10 @@ export type Props = {
   avatarURL: string;
   followers: number;
   following: number;
+  repos: {
+    name: string;
+    url: string;
+  }[];
 };
 
 export default function User({
@@ -14,6 +18,7 @@ export default function User({
   avatarURL,
   followers,
   following,
+  repos,
 }: Props): JSX.Element {
   return (
     <div className={styles['wrapper']}>
@@ -23,6 +28,13 @@ export default function User({
       </div>
       <div>followers: {followers}</div>
       <div>following: {following}</div>
+      <div className={styles['repos']}>
+        {repos.map((r, i) => (
+          <a href={r.url} key={i} target="_blank" rel="noreferrer">
+            {r.name}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
