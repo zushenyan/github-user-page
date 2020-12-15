@@ -29,6 +29,12 @@ export const getTotalPage = createSelector(
 
 export const getStatus = createSelector(getState, (s) => s.users.status);
 
+export const getShowBottom = createSelector(
+  getTotalPage,
+  getStatus,
+  (t, s) => t > 1 || s === 'success'
+);
+
 export const getNextDisabled = createSelector(
   getCurrentPage,
   getTotalPage,

@@ -1,3 +1,5 @@
+import '../styles/global.css';
+
 import React from 'react';
 import { RouterContext } from 'next/dist/next-server/lib/router-context';
 

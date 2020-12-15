@@ -1,0 +1,25 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.anchor {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.anchor:last-of-type {
+  margin-bottom: 0;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+}
+
+.name {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+}

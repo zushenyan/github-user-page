@@ -5,6 +5,7 @@ import slice, { fetchUsers } from './slice';
 export const search = (): AppThunk => async (dispatch, getState) => {
   dispatch(slice.actions.setCurrentPage(1));
   const keyword = getState().users.inputValue;
+  dispatch(slice.actions.setLastSearchValue(keyword));
   dispatch(
     fetchUsers({
       keyword,
@@ -19,7 +20,7 @@ export const gotoPage = (page: number): AppThunk => async (
   getState
 ) => {
   dispatch(slice.actions.setCurrentPage(page));
-  const keyword = getState().users.inputValue;
+  const keyword = getState().users.lastSearchValue;
   dispatch(
     fetchUsers({
       keyword,

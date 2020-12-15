@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SearchBar.module.css';
 
 export type Props = {
   inputValue: string;
@@ -12,9 +13,16 @@ export default function SearchBar({
   onSubmit,
 }: Props): JSX.Element {
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" onChange={onInputChange} value={inputValue} />
-      <button type="submit">search</button>
+    <form className={styles['wrapper']} onSubmit={onSubmit}>
+      <input
+        className={styles['input']}
+        type="text"
+        onChange={onInputChange}
+        value={inputValue}
+      />
+      <button className={styles['button']} type="submit">
+        search
+      </button>
     </form>
   );
 }

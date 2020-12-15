@@ -1,5 +1,13 @@
 import React from 'react';
 
+import styles from './Spinner.module.css';
+
 export default function Spinner(): JSX.Element {
-  return <h1>spinner</h1>;
+  return (
+    <div className={styles['spinner']}>
+      <div />
+      <div />
+      <div />
+    </div>
+  );
 }

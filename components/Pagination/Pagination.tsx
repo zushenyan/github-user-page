@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './Pagination.module.css';
+
 export type Props = {
   currentPage: number;
   totalPage: number;
@@ -18,17 +20,23 @@ export default function Pagination({
   prevDisabled,
 }: Props): JSX.Element {
   return (
-    <div>
-      <button onClick={onClickPrev} disabled={prevDisabled}>
-        previous page
+    <div className={styles['wrapper']}>
+      <button
+        className={styles['button']}
+        onClick={onClickPrev}
+        disabled={prevDisabled}
+      >
+        &lt;
       </button>
-      <span>
-        <strong>
-          {currentPage} of {totalPage}
-        </strong>
-      </span>
-      <button onClick={onClickNext} disabled={nextDisabled}>
-        next page
+      <div className={styles['text']}>
+        {currentPage} of {totalPage}
+      </div>
+      <button
+        className={styles['button']}
+        onClick={onClickNext}
+        disabled={nextDisabled}
+      >
+        &gt;
       </button>
     </div>
   );

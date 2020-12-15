@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.top {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.middle {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  background: white;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
+import User from '../../components/User';
 import { getUser, Response } from '../../lib/apis/user';
 
-export default function User(context: Response): JSX.Element {
+export default function UserPage(context: Response): JSX.Element {
   return (
-    <div>
-      <h1>username: {context.login}</h1>
-      <h1>avatar: {context.avatar_url}</h1>
-      <h1>followers: {context.followers}</h1>
-      <h1>following: {context.following}</h1>
-    </div>
+    <User
+      username={context.login}
+      avatarURL={context.avatar_url}
+      followers={context.followers}
+      following={context.following}
+    />
   );
 }
 
