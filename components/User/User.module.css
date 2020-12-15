@@ -16,8 +16,3 @@
   font-size: 2rem;
   padding: 0 1rem;
 }
-
-.repos {
-  display: flex;
-  flex-direction: column;
-}

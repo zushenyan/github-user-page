@@ -16,6 +16,11 @@ export default function App({
   return (
     <>
       <Head>
+        <title>Github user searcher</title>
+        <meta
+          name="description"
+          content="A very simple Github user searcher."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Provider store={store}>

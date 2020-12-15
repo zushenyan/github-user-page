@@ -16,9 +16,11 @@ export default function SearchBar({
     <form className={styles['wrapper']} onSubmit={onSubmit}>
       <input
         className={styles['input']}
+        aria-label="username"
         type="text"
         onChange={onInputChange}
         value={inputValue}
+        placeholder="Type to seach users on Github.com"
       />
       <button className={styles['button']} type="submit">
         search

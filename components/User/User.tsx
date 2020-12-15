@@ -28,12 +28,17 @@ export default function User({
       </div>
       <div>followers: {followers}</div>
       <div>following: {following}</div>
-      <div className={styles['repos']}>
-        {repos.map((r, i) => (
-          <a href={r.url} key={i} target="_blank" rel="noreferrer">
-            {r.name}
-          </a>
-        ))}
+      <div>
+        Repositories:
+        <ul>
+          {repos.map((r, i) => (
+            <li key={i}>
+              <a href={r.url} target="_blank" rel="noreferrer">
+                {r.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -17,17 +17,5 @@ const data = Array.from(Array(100).keys()).map((k) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  inputValue: 'foo',
-  pageCount: 50,
-  fetchData: () => undefined,
-  columns: [
-    {
-      accessor: 'avatarURL',
-      Cell: ({ value }) => <img src={value} />,
-    },
-    {
-      accessor: 'username',
-    },
-  ],
   data,
 };
