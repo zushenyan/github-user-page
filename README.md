@@ -4,6 +4,10 @@
 
 This is an assignment about writing a simple GitHub user search website.
 
+<p align="center">
+  <img src="https://github.com/zushenyan/github-user-page/blob/main/lighthouse_result.png">
+</p>
+
 # Setup
 
 1. `nvm use` - please checkout `.nvmrc` for Node version that the project is using.
