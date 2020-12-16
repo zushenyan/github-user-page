@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { debounce } from 'lodash';
 
 import styles from './Home.module.css';
 
@@ -34,13 +35,14 @@ export default function Home(): JSX.Element {
   const status = useSelector(getStatus);
   const showBottom = useSelector(getShowBottom);
 
+  const debouncedSearch = useMemo(
+    () => debounce(() => dispatch(search()), 400),
+    [dispatch]
+  );
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(slice.actions.setInputValue(e.target.value));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    dispatch(search());
+    debouncedSearch();
   };
 
   const handleNextPage = () => {
@@ -58,11 +60,7 @@ export default function Home(): JSX.Element {
     })) || [];
 
   const top = (
-    <SearchBar
-      inputValue={keyword}
-      onInputChange={handleInputChange}
-      onSubmit={handleFormSubmit}
-    />
+    <SearchBar inputValue={keyword} onInputChange={handleInputChange} />
   );
 
   const middle =

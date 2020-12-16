@@ -46,6 +46,6 @@ This is an assignment about writing a simple GitHub user search website.
 - [x] All pages are SEO optimised
 - [x] The project supports code splitting for each pages
 - [ ] The results list also asynchronous-ly shows the number of followers and following of each user without going the user page
-- [ ] The search input does the searching as you type (See google search as an example)
+- [x] The search input does the searching as you type (See google search as an example)
 - [x] There is animated transition between pages
 - [x] The application supports theming and can easily be switched between themes

@@ -4,7 +4,7 @@ import styles from './SearchBar.module.css';
 export type Props = {
   inputValue: string;
   onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit?: (e: React.FormEvent) => void;
 };
 
 export default function SearchBar({
@@ -22,9 +22,6 @@ export default function SearchBar({
         value={inputValue}
         placeholder="Type to seach users on Github.com"
       />
-      <button className={styles['button']} type="submit">
-        search
-      </button>
     </form>
   );
 }
